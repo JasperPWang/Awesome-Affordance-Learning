@@ -29,20 +29,23 @@
 
 
 
-## 📖 Contents<br><sub>目录</sub>
+## 📖 Contents 目录
 
-- [🔥 News<br>动态](#news)
-- [🌟 Introduction<br>介绍](#introduction)
-- [🧭 Taxonomy<br>分类体系](#taxonomy)
-- [📄 Paper List<br>论文列表](#paper-list)
-  - [👁️ Affordance Perception<br>可供性感知](#perception)
-  - [🧠 Affordance Reasoning<br>可供性推理](#reasoning)
-  - [🤖 Affordance-Guided Action<br>可供性引导的动作](#action)
-  - [📊 Affordance Datasets / Benchmarks<br>数据集与基准](#affordance-datasets-benchmarks)
-  - [📚 Related Surveys<br>相关综述](#related-surveys)
-- [🎉 Contributing<br>参与贡献](#contributing)
-- [🌟 Acknowledgment<br>致谢](#acknowledgment)
-- [📄 License<br>许可证](#license)
+> This bilingual edition is generated from `README.md`. Do not edit generated paper rows directly.<br>
+> 本中英对照版由 `README.md` 生成，请勿直接修改生成的论文条目。
+
+- [🔥 News 动态](#news)
+- [🌟 Introduction 介绍](#introduction)
+- [🧭 Taxonomy 分类体系](#taxonomy)
+- [📄 Paper List 论文列表](#paper-list)
+  - [👁️ Affordance Perception 可供性感知](#perception)
+  - [🧠 Affordance Reasoning 可供性推理](#reasoning)
+  - [🤖 Affordance-Guided Action 可供性引导的动作](#action)
+  - [📊 Affordance Datasets / Benchmarks 数据集与基准](#affordance-datasets-benchmarks)
+  - [📚 Related Surveys 相关综述](#related-surveys)
+- [🎉 Contributing 参与贡献](#contributing)
+- [🌟 Acknowledgment 致谢](#acknowledgment)
+- [📄 License 许可证](#license)
 - [👥 Contributors](#-contributors)
 
 

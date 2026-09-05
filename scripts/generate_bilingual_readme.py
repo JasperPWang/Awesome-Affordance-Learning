@@ -18,7 +18,7 @@ REPLACEMENTS = {
         "## From Passive Perception to Active Interaction: A Survey of <br> Affordance Learning for Embodied AI<br><sub>从被动感知到主动交互：面向具身智能的可供性学习综述</sub>",
     "> 🧭 Exploring Embodied AI and Embodied perception? We hope this collection proves useful in your journey. If you'd like to support the project, feel free to ⭐️ the repo and share it with your peers. Contributions are warmly welcome!":
         "> 🧭 Exploring Embodied AI and embodied perception? We hope this collection proves useful in your journey. If you'd like to support the project, feel free to ⭐️ the repo and share it with your peers. Contributions are warmly welcome!  \n> 正在探索具身智能与具身感知？希望这份资料集能为你的研究之旅提供帮助。如果你愿意支持本项目，欢迎为仓库点亮 ⭐️、分享给同行，也欢迎参与贡献！",
-    "## 📖 Contents": "## 📖 Contents / 目录",
+    "## 📖 Contents": "## 📖 Contents 目录",
     "## 🔥 News": "## 🔥 News / 动态",
     "## 🌟 Introduction": "## 🌟 Introduction / 介绍",
     "## 🧭 Taxonomy": "## 🧭 Taxonomy / 分类体系",
@@ -175,18 +175,18 @@ def main() -> None:
     for old, new in REPLACEMENTS.items():
         text = text.replace(old, new)
     toc = {
-        "[🔥 News](#-news)": "[🔥 News / 动态](#news)",
-        "[🌟 Introduction](#-introduction)": "[🌟 Introduction / 介绍](#introduction)",
-        "[🧭 Taxonomy](#-taxonomy)": "[🧭 Taxonomy / 分类体系](#taxonomy)",
-        "[📄 Paper List](#-paper-list)": "[📄 Paper List / 论文列表](#paper-list)",
-        "[👁️ Affordance Perception](#perception)": "[👁️ Affordance Perception / 可供性感知](#perception)",
-        "[🧠 Affordance Reasoning](#reasoning)": "[🧠 Affordance Reasoning / 可供性推理](#reasoning)",
-        "[🤖 Affordance-Guided Action](#action)": "[🤖 Affordance-Guided Action / 可供性引导的动作](#action)",
-        "[📊 Affordance Datasets / Benchmarks](#affordance-datasets-benchmarks)": "[📊 Affordance Datasets / Benchmarks<br>数据集与基准](#affordance-datasets-benchmarks)",
-        "[📚 Related Surveys](#related-surveys)": "[📚 Related Surveys / 相关综述](#related-surveys)",
-        "[🎉 Contributing](#-contributing)": "[🎉 Contributing / 参与贡献](#contributing)",
-        "[🌟 Acknowledgment](#-acknowledgment)": "[🌟 Acknowledgment / 致谢](#acknowledgment)",
-        "[📄 License](#-license)": "[📄 License / 许可证](#license)",
+        "[🔥 News](#-news)": "[🔥 News 动态](#news)",
+        "[🌟 Introduction](#-introduction)": "[🌟 Introduction 介绍](#introduction)",
+        "[🧭 Taxonomy](#-taxonomy)": "[🧭 Taxonomy 分类体系](#taxonomy)",
+        "[📄 Paper List](#-paper-list)": "[📄 Paper List 论文列表](#paper-list)",
+        "[👁️ Affordance Perception](#perception)": "[👁️ Affordance Perception 可供性感知](#perception)",
+        "[🧠 Affordance Reasoning](#reasoning)": "[🧠 Affordance Reasoning 可供性推理](#reasoning)",
+        "[🤖 Affordance-Guided Action](#action)": "[🤖 Affordance-Guided Action 可供性引导的动作](#action)",
+        "[📊 Affordance Datasets / Benchmarks](#affordance-datasets-benchmarks)": "[📊 Affordance Datasets / Benchmarks 数据集与基准](#affordance-datasets-benchmarks)",
+        "[📚 Related Surveys](#related-surveys)": "[📚 Related Surveys 相关综述](#related-surveys)",
+        "[🎉 Contributing](#-contributing)": "[🎉 Contributing 参与贡献](#contributing)",
+        "[🌟 Acknowledgment](#-acknowledgment)": "[🌟 Acknowledgment 致谢](#acknowledgment)",
+        "[📄 License](#-license)": "[📄 License 许可证](#license)",
     }
     for old, new in toc.items():
         text = text.replace(old, new)
@@ -199,14 +199,6 @@ def main() -> None:
 
     text = re.sub(r"^#{2,3} [^\n]+ / [^\n]+$", heading_break, text, flags=re.MULTILINE)
 
-    def toc_break(match: re.Match[str]) -> str:
-        label, target = match.group(1), match.group(2)
-        if "<br>" in label:
-            return match.group(0)
-        english, chinese = label.rsplit(" / ", 1)
-        return f"[{english}<br>{chinese}]({target})"
-
-    text = re.sub(r"\[([^\]]+ / [^\]]+)\]\((#[^)]+)\)", toc_break, text)
     anchors = {
         "## 🔥 News<br><sub>动态</sub>": "news", "## 🌟 Introduction<br><sub>介绍</sub>": "introduction",
         "## 🧭 Taxonomy<br><sub>分类体系</sub>": "taxonomy", "## 📄 Paper List<br><sub>论文列表</sub>": "paper-list",
@@ -216,8 +208,8 @@ def main() -> None:
     for heading, anchor in anchors.items():
         text = text.replace(heading, f'<a id="{anchor}"></a>\n{heading}')
     text = text.replace(
-        "## 📖 Contents / 目录\n",
-        "## 📖 Contents / 目录\n\n> This bilingual edition is generated from `README.md`. Do not edit generated paper rows directly.  \n> 本中英对照版由 `README.md` 生成，请勿直接修改生成的论文条目。\n",
+        "## 📖 Contents 目录\n",
+        "## 📖 Contents 目录\n\n> This bilingual edition is generated from `README.md`. Do not edit generated paper rows directly.<br>\n> 本中英对照版由 `README.md` 生成，请勿直接修改生成的论文条目。\n",
     )
     text = text.replace("## 🎉 Contributing / 参与贡献\n", "## 🎉 Contributing / 参与贡献\n\n欢迎补充或更新论文。请选择最合适的分类、保持现有格式，并优先使用 arXiv `/abs/` 摘要链接。\n")
     text = "\n".join(sort_markdown_tables(text.splitlines())) + "\n"
