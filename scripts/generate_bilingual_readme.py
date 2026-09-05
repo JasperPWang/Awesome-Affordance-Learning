@@ -190,20 +190,20 @@ def main() -> None:
     }
     for old, new in toc.items():
         text = text.replace(old, new)
-    # Use line breaks, rather than slashes, as the visual separator between
-    # English and Chinese. Semantic slashes inside names remain untouched.
-    def heading_break(match: re.Match[str]) -> str:
+    # Section headings are short enough to keep English and Chinese inline.
+    # Semantic slashes inside names remain untouched.
+    def heading_inline(match: re.Match[str]) -> str:
         line = match.group(0)
         english, chinese = line.rsplit(" / ", 1)
-        return f"{english}<br><sub>{chinese}</sub>"
+        return f"{english} {chinese}"
 
-    text = re.sub(r"^#{2,3} [^\n]+ / [^\n]+$", heading_break, text, flags=re.MULTILINE)
+    text = re.sub(r"^#{2,3} [^\n]+ / [^\n]+$", heading_inline, text, flags=re.MULTILINE)
 
     anchors = {
-        "## 🔥 News<br><sub>动态</sub>": "news", "## 🌟 Introduction<br><sub>介绍</sub>": "introduction",
-        "## 🧭 Taxonomy<br><sub>分类体系</sub>": "taxonomy", "## 📄 Paper List<br><sub>论文列表</sub>": "paper-list",
-        "## 🎉 Contributing<br><sub>参与贡献</sub>": "contributing", "## 🌟 Acknowledgment<br><sub>致谢</sub>": "acknowledgment",
-        "## 📄 License<br><sub>许可证</sub>": "license",
+        "## 🔥 News 动态": "news", "## 🌟 Introduction 介绍": "introduction",
+        "## 🧭 Taxonomy 分类体系": "taxonomy", "## 📄 Paper List 论文列表": "paper-list",
+        "## 🎉 Contributing 参与贡献": "contributing", "## 🌟 Acknowledgment 致谢": "acknowledgment",
+        "## 📄 License 许可证": "license",
     }
     for heading, anchor in anchors.items():
         text = text.replace(heading, f'<a id="{anchor}"></a>\n{heading}')
@@ -211,7 +211,7 @@ def main() -> None:
         "## 📖 Contents 目录\n",
         "## 📖 Contents 目录\n\n> This bilingual edition is generated from `README.md`. Do not edit generated paper rows directly.<br>\n> 本中英对照版由 `README.md` 生成，请勿直接修改生成的论文条目。\n",
     )
-    text = text.replace("## 🎉 Contributing / 参与贡献\n", "## 🎉 Contributing / 参与贡献\n\n欢迎补充或更新论文。请选择最合适的分类、保持现有格式，并优先使用 arXiv `/abs/` 摘要链接。\n")
+    text = text.replace("## 🎉 Contributing 参与贡献\n", "## 🎉 Contributing 参与贡献\n\n欢迎补充或更新论文。请选择最合适的分类、保持现有格式，并优先使用 arXiv `/abs/` 摘要链接。\n")
     text = "\n".join(sort_markdown_tables(text.splitlines())) + "\n"
     text = "[English](README.md)<br>**简体中文 · English–Chinese**\n\n" + text
     TARGET.write_text(text, encoding="utf-8")

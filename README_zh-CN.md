@@ -51,7 +51,7 @@
 
 
 <a id="news"></a>
-## 🔥 News<br><sub>动态</sub>
+## 🔥 News 动态
 
 > 📢 This list is **actively maintained**, and community contributions are always appreciated!  
 > 本列表正在**持续维护**，诚挚欢迎社区贡献！  
@@ -63,7 +63,7 @@
 
 
 <a id="introduction"></a>
-## 🌟 Introduction<br><sub>介绍</sub>
+## 🌟 Introduction 介绍
 
 This repository accompanies the survey **From Passive Perception to Active Interaction: A Survey of Affordance Learning for Embodied AI** and maintains a curated collection of papers, datasets, and benchmarks.
 
@@ -83,7 +83,7 @@ A paper may be cross-referenced when the survey discusses it in more than one ro
 
 
 <a id="taxonomy"></a>
-## 🧭 Taxonomy<br><sub>分类体系</sub>
+## 🧭 Taxonomy 分类体系
 
 The taxonomy follows the survey's functional pipeline rather than only model architecture. It expands each primary category into second- and third-level categories. Cross-listing is intentional when a method contributes to multiple stages or perspectives.
 
@@ -103,7 +103,7 @@ The taxonomy follows the survey's functional pipeline rather than only model arc
 
 
 <a id="paper-list"></a>
-## 📄 Paper List<br><sub>论文列表</sub>
+## 📄 Paper List 论文列表
 
 The **Venue/Date** column prioritizes the formal venue and publication year. Papers without a confirmed venue are labeled `arXiv`. The **Name** column records the method or system name explicitly introduced by the authors, including names stated only in the abstract or main text rather than in the title; `-` means that no explicit method name has been verified and no acronym is inferred from the title.
 
@@ -112,7 +112,7 @@ The **Venue/Date** column prioritizes the formal venue and publication year. Pap
 > 说明：论文标题保留作者发布的正式英文原题，便于精确检索与引用。各表按年份从新到旧排列；同年记录保持上游顺序。
 
 <a id="perception"></a>
-### 👁️ Affordance Perception<br><sub>可供性感知</sub>
+### 👁️ Affordance Perception 可供性感知
 
 | Venue/Date<br>会议/日期 | Name<br>名称 | Title<br>论文标题 | Paper<br>论文 | Scope<br>范围 | Perception Subcategory<br>感知子类 |
 | :-: | :-: | :- | :-: | :-: | :-: |
@@ -203,7 +203,7 @@ The **Venue/Date** column prioritizes the formal venue and publication year. Pap
 | IJRR 2013 | - | Learning Human Activities and Object Affordances from RGB-D Videos<br>从 RGB-D 视频中学习人类活动和物体可供性 | [![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge)](https://dl.acm.org/doi/abs/10.1177/0278364913478446) | Scene<br>场景 | Interaction-driven<br>交互驱动 |
 
 <a id="reasoning"></a>
-### 🧠 Affordance Reasoning<br><sub>可供性推理</sub>
+### 🧠 Affordance Reasoning 可供性推理
 
 | Venue/Date<br>会议/日期 | Name<br>名称 | Title<br>论文标题 | Paper<br>论文 | Reasoning Subcategory<br>推理子类 |
 | :-: | :-: | :- | :-: | :-: |
@@ -255,7 +255,7 @@ The **Venue/Date** column prioritizes the formal venue and publication year. Pap
 | TCDS 2016 | - | Bootstrapping Relational Affordances of Object Pairs Using Transfer<br>使用迁移引导物体对的关系可供性 | [![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge)](https://doi.org/10.1109/TCDS.2016.2616496) | Relation-Based Affordance Reasoning<br>基于关系的可供性推理 |
 | ECCV 2014 | - | Reasoning about Object Affordances in a Knowledge Base Representation<br>知识库表示中物体可供性的推理 | [![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge)](https://link.springer.com/chapter/10.1007/978-3-319-10605-2_27) | Relation-Based Affordance Reasoning<br>基于关系的可供性推理 |
 <a id="action"></a>
-### 🤖 Affordance-Guided Action<br><sub>可供性引导的动作</sub>
+### 🤖 Affordance-Guided Action 可供性引导的动作
 
 | Venue/Date<br>会议/日期 | Name<br>名称 | Title<br>论文标题 | Paper<br>论文 | Architecture | Affordance Usage | Action Subcategory<br>动作子类 |
 | :-: | :-: | :- | :-: | :-: | :-: | :-: |
@@ -323,7 +323,7 @@ The **Venue/Date** column prioritizes the formal venue and publication year. Pap
 
 
 <a id="affordance-datasets-benchmarks"></a>
-### 📊 Affordance Datasets / Benchmarks<br><sub>可供性数据集与基准</sub>
+### 📊 Affordance Datasets / Benchmarks 可供性数据集与基准
 
 **Survey groups:** object-centric · scene-level · interaction-driven · language- and reasoning-oriented · action-oriented.<br>**综述分组：** 以物体为中心 · 场景级 · 交互驱动 · 语言与推理导向 · 动作导向。
 
@@ -375,7 +375,7 @@ The **Venue/Date** column prioritizes the formal venue and publication year. Pap
 | ICRA 2015 | `UMD RGB-D Part Affordance Dataset` | Affordance Detection of Tool Parts from Geometric Features<br>从几何特征检测工具零件的可供性 | [![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge)](https://www.umiacs.umd.edu/user.php?path=cteo%2Fpublic-shared%2FICRA15_affordance_parts_final.pdf) | image |
 
 <a id="related-surveys"></a>
-### 📚 Related Surveys<br><sub>相关综述</sub>
+### 📚 Related Surveys 相关综述
 
 | Venue/Date<br>会议/日期 | Name<br>名称 | Title<br>论文标题 | Paper<br>论文 | Focus<br>关注点 |
 | :-: | :-: | :- | :-: | :-: |
@@ -392,7 +392,9 @@ The **Venue/Date** column prioritizes the formal venue and publication year. Pap
 
 
 <a id="contributing"></a>
-## 🎉 Contributing<br><sub>参与贡献</sub>
+## 🎉 Contributing 参与贡献
+
+欢迎补充或更新论文。请选择最合适的分类、保持现有格式，并优先使用 arXiv `/abs/` 摘要链接。
 
 ⭐ Help us grow this repository! If you know any valuable works we’ve missed, don’t hesitate to contribute — every suggestion makes a difference!
 
@@ -415,13 +417,13 @@ We welcome and appreciate all contributions! Here’s how you can help:
 
 
 <a id="acknowledgment"></a>
-## 🌟 Acknowledgment<br><sub>致谢</sub>
+## 🌟 Acknowledgment 致谢
 
 Thanks to all the wonderful researchers focusing on affordance learning and embodied AI.  
 感谢所有致力于可供性学习和具身智能研究的优秀学者。
 
 <a id="license"></a>
-## 📄 License<br><sub>许可证</sub>
+## 📄 License 许可证
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).  
 本项目采用 [MIT License](https://opensource.org/licenses/MIT)。
