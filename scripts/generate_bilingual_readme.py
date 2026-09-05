@@ -39,9 +39,9 @@ REPLACEMENTS = {
         "This repository accompanies the survey **From Passive Perception to Active Interaction: A Survey of Affordance Learning for Embodied AI** and maintains a curated collection of papers, datasets, and benchmarks.\n\n本仓库与综述论文 **From Passive Perception to Active Interaction: A Survey of Affordance Learning for Embodied AI** 配套，持续整理论文、数据集与评测基准。",
     "As robots and embodied agents move into real-world applications, they must understand not only what objects are, but also where, why, and how they can interact with them. Following the survey, the list is organized around three complementary questions:":
         "As robots and embodied agents move into real-world applications, they must understand not only what objects are, but also where, why, and how they can interact with them. Following the survey, the list is organized around three complementary questions:\n\n当机器人与具身智能体走向真实世界应用时，它们不仅需要识别物体，还需要理解在何处、为何以及如何与物体交互。依据该综述，本列表围绕三个相互补充的问题组织：",
-    "- **Affordance Perception:** Where or which region affords an interaction?": "- **Affordance Perception / 可供性感知：** Where or which region affords an interaction? / 哪里或哪个区域支持某种交互？",
-    "- **Affordance Reasoning:** Which affordance is relevant under the current task, environment, and constraints?": "- **Affordance Reasoning / 可供性推理：** Which affordance is relevant under the current task, environment, and constraints? / 在当前任务、环境和约束下，哪种可供性有关？",
-    "- **Affordance-Guided Action:** How can an affordance be converted into an executable action?": "- **Affordance-Guided Action / 可供性引导的动作：** How can an affordance be converted into an executable action? / 如何将可供性转化为可执行动作？",
+    "- **Affordance Perception:** Where or which region affords an interaction?": "- **Affordance Perception:** Where or which region affords an interaction?<br>**可供性感知：** 哪里或哪个区域支持某种交互？",
+    "- **Affordance Reasoning:** Which affordance is relevant under the current task, environment, and constraints?": "- **Affordance Reasoning:** Which affordance is relevant under the current task, environment, and constraints?<br>**可供性推理：** 在当前任务、环境和约束下，哪种可供性有关？",
+    "- **Affordance-Guided Action:** How can an affordance be converted into an executable action?": "- **Affordance-Guided Action:** How can an affordance be converted into an executable action?<br>**可供性引导的动作：** 如何将可供性转化为可执行动作？",
     "A paper may be cross-referenced when the survey discusses it in more than one role (for example, both perception and reasoning). A separate section collects datasets and benchmarks. Venue labels use the formally published version whenever one is available; otherwise the first public preprint is marked `arXiv`.":
         "A paper may be cross-referenced when the survey discusses it in more than one role (for example, both perception and reasoning). A separate section collects datasets and benchmarks. Venue labels use the formally published version whenever one is available; otherwise the first public preprint is marked `arXiv`.\n\n如果综述从多种角色讨论同一篇论文（例如同时涉及感知与推理），该论文可能在多个分类中交叉收录。数据集和基准单独列出。如果存在正式发表版本，会议/期刊标签优先使用正式版本；否则以首次公开的预印本标记为 `arXiv`。",
     "The taxonomy follows the survey's functional pipeline rather than only model architecture. It expands each primary category into second- and third-level categories. Cross-listing is intentional when a method contributes to multiple stages or perspectives.":
@@ -49,7 +49,7 @@ REPLACEMENTS = {
     "The **Venue/Date** column prioritizes the formal venue and publication year. Papers without a confirmed venue are labeled `arXiv`. The **Name** column records the method or system name explicitly introduced by the authors, including names stated only in the abstract or main text rather than in the title; `-` means that no explicit method name has been verified and no acronym is inferred from the title.":
         "The **Venue/Date** column prioritizes the formal venue and publication year. Papers without a confirmed venue are labeled `arXiv`. The **Name** column records the method or system name explicitly introduced by the authors, including names stated only in the abstract or main text rather than in the title; `-` means that no explicit method name has been verified and no acronym is inferred from the title.\n\n**会议/日期**列优先记录正式发表场所与年份；未确认正式发表场所的论文标记为 `arXiv`。**名称**列记录作者明确提出的方法或系统名称，包括仅出现于摘要或正文中而未出现于标题的名称；`-` 表示尚未核验到明确的方法名，也不根据标题自行推导缩写。\n\n> 说明：论文标题保留作者发布的正式英文原题，便于精确检索与引用。各表按年份从新到旧排列；同年记录保持上游顺序。",
     "**Survey groups:** object-centric · scene-level · interaction-driven · language- and reasoning-oriented · action-oriented.":
-        "**Survey groups / 综述分组：** object-centric / 以物体为中心 · scene-level / 场景级 · interaction-driven / 交互驱动 · language- and reasoning-oriented / 语言与推理导向 · action-oriented / 动作导向。",
+        "**Survey groups:** object-centric · scene-level · interaction-driven · language- and reasoning-oriented · action-oriented.<br>**综述分组：** 以物体为中心 · 场景级 · 交互驱动 · 语言与推理导向 · 动作导向。",
     "Thanks for the wonderful researchers focusing on affordance learning and embodied AI ":
         "Thanks to all the wonderful researchers focusing on affordance learning and embodied AI.  \n感谢所有致力于可供性学习和具身智能研究的优秀学者。",
     "This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).":
@@ -94,6 +94,7 @@ TERMS = {
     "Integrated policy": "Integrated policy / 集成策略", "Optimization signal": "Optimization signal / 优化信号",
     "Implicit representation": "Implicit representation / 隐式表征", "Explicit representation": "Explicit representation / 显式表征",
 }
+TERMS = {key: value.replace(" / ", "<br>", 1) for key, value in TERMS.items()}
 
 
 def translate_table_cells(line: str) -> str:
@@ -150,7 +151,7 @@ def main() -> None:
         "[👁️ Affordance Perception](#perception)": "[👁️ Affordance Perception / 可供性感知](#perception)",
         "[🧠 Affordance Reasoning](#reasoning)": "[🧠 Affordance Reasoning / 可供性推理](#reasoning)",
         "[🤖 Affordance-Guided Action](#action)": "[🤖 Affordance-Guided Action / 可供性引导的动作](#action)",
-        "[📊 Affordance Datasets / Benchmarks](#affordance-datasets-benchmarks)": "[📊 Affordance Datasets / Benchmarks / 数据集与基准](#affordance-datasets-benchmarks)",
+        "[📊 Affordance Datasets / Benchmarks](#affordance-datasets-benchmarks)": "[📊 Affordance Datasets / Benchmarks<br>数据集与基准](#affordance-datasets-benchmarks)",
         "[📚 Related Surveys](#related-surveys)": "[📚 Related Surveys / 相关综述](#related-surveys)",
         "[🎉 Contributing](#-contributing)": "[🎉 Contributing / 参与贡献](#contributing)",
         "[🌟 Acknowledgment](#-acknowledgment)": "[🌟 Acknowledgment / 致谢](#acknowledgment)",
@@ -158,11 +159,28 @@ def main() -> None:
     }
     for old, new in toc.items():
         text = text.replace(old, new)
+    # Use line breaks, rather than slashes, as the visual separator between
+    # English and Chinese. Semantic slashes inside names remain untouched.
+    def heading_break(match: re.Match[str]) -> str:
+        line = match.group(0)
+        english, chinese = line.rsplit(" / ", 1)
+        return f"{english}<br><sub>{chinese}</sub>"
+
+    text = re.sub(r"^#{2,3} [^\n]+ / [^\n]+$", heading_break, text, flags=re.MULTILINE)
+
+    def toc_break(match: re.Match[str]) -> str:
+        label, target = match.group(1), match.group(2)
+        if "<br>" in label:
+            return match.group(0)
+        english, chinese = label.rsplit(" / ", 1)
+        return f"[{english}<br>{chinese}]({target})"
+
+    text = re.sub(r"\[([^\]]+ / [^\]]+)\]\((#[^)]+)\)", toc_break, text)
     anchors = {
-        "## 🔥 News / 动态": "news", "## 🌟 Introduction / 介绍": "introduction",
-        "## 🧭 Taxonomy / 分类体系": "taxonomy", "## 📄 Paper List / 论文列表": "paper-list",
-        "## 🎉 Contributing / 参与贡献": "contributing", "## 🌟 Acknowledgment / 致谢": "acknowledgment",
-        "## 📄 License / 许可证": "license",
+        "## 🔥 News<br><sub>动态</sub>": "news", "## 🌟 Introduction<br><sub>介绍</sub>": "introduction",
+        "## 🧭 Taxonomy<br><sub>分类体系</sub>": "taxonomy", "## 📄 Paper List<br><sub>论文列表</sub>": "paper-list",
+        "## 🎉 Contributing<br><sub>参与贡献</sub>": "contributing", "## 🌟 Acknowledgment<br><sub>致谢</sub>": "acknowledgment",
+        "## 📄 License<br><sub>许可证</sub>": "license",
     }
     for heading, anchor in anchors.items():
         text = text.replace(heading, f'<a id="{anchor}"></a>\n{heading}')
@@ -172,7 +190,7 @@ def main() -> None:
     )
     text = text.replace("## 🎉 Contributing / 参与贡献\n", "## 🎉 Contributing / 参与贡献\n\n欢迎补充或更新论文。请选择最合适的分类、保持现有格式，并优先使用 arXiv `/abs/` 摘要链接。\n")
     text = "\n".join(sort_markdown_tables(text.splitlines())) + "\n"
-    text = "[English](README.md) | **简体中文 / English–Chinese**\n\n" + text
+    text = "[English](README.md)<br>**简体中文 · English–Chinese**\n\n" + text
     TARGET.write_text(text, encoding="utf-8")
     print(f"generated {TARGET.name}: {len(text.splitlines())} lines")
 
