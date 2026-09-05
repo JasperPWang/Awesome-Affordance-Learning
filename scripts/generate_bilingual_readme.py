@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import re
+import json
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "README.md"
 TARGET = ROOT / "README_zh-CN.md"
+TITLE_TRANSLATIONS = json.loads((ROOT / "data" / "title_translations_zh-CN.json").read_text(encoding="utf-8"))
 
 REPLACEMENTS = {
     "## From Passive Perception to Active Interaction: A Survey of <br> Affordance Learning for Embodied AI":
@@ -123,6 +125,8 @@ def translate_table_cells(line: str) -> str:
         raw = cells[i].strip()
         if raw in CELL:
             cells[i] = f" {CELL[raw]} "
+        elif raw in TITLE_TRANSLATIONS:
+            cells[i] = f" {raw}<br>{TITLE_TRANSLATIONS[raw]} "
         elif raw in TERMS:
             cells[i] = f" {TERMS[raw]} "
         else:
@@ -159,6 +163,15 @@ def sort_markdown_tables(lines: list[str]) -> list[str]:
 
 def main() -> None:
     text = SOURCE.read_text(encoding="utf-8")
+    source_titles = set()
+    for line in text.splitlines():
+        if line.startswith("|") and "[![Paper]" in line:
+            cells = [cell.strip() for cell in line.strip("|").split("|")]
+            if len(cells) >= 5:
+                source_titles.add(cells[2])
+    missing = sorted(source_titles - TITLE_TRANSLATIONS.keys())
+    if missing:
+        raise SystemExit("Missing Chinese title translations:\n" + "\n".join(missing))
     for old, new in REPLACEMENTS.items():
         text = text.replace(old, new)
     toc = {
